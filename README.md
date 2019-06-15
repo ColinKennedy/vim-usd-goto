@@ -1,8 +1,8 @@
 vim-usd-goto lets you navigate Pixar's USD files with ease, even if
 those files aren't written as file paths.
 
-In Vim, the "gf" command lets you open files on-disk if the path is
-under your cursor. "gf" doesn't work with most USD Asset paths because
+In Vim, the `gf` command lets you open files on-disk if the path is
+under your cursor. `gf` doesn't work with most USD Asset paths because
 pipelines don't write USD files as "/foo/bar/path.usd". It's usually
 some syntax like "my_cool_resolver:?database?asset?v10&extension=usda"
 or some other crazy syntax.
@@ -18,7 +18,7 @@ Example:
 )
 ```
 
-This plugin lets you put your cursor in-between the @s and press "gf".
+This plugin lets you put your cursor in-between the @s and press `gf`.
 Vim will navigate to the file on-disk as normal, assuming it actually
 exists.
 
@@ -81,7 +81,7 @@ from pxr import Ar
 Ar.GetResolver().Resolve(path)
 ```
 
-where `path` is whatever is under your cursor when "gf" is pressed.
+where `path` is whatever is under your cursor when `gf` is pressed.
 
 
 ### Using command-line
@@ -111,7 +111,7 @@ EOF
 ```
 
 - Restart Vim
-- The next time you try to open a path with "gf", if no other resolver
+- The next time you try to open a path with `gf`, if no other resolver
 method could be found and "/tmp/default_file.usda" then that file will
 be opened in Vim, instead.
 
