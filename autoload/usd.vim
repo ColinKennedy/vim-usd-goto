@@ -1,6 +1,6 @@
 function! usd#resolve(path)
 pythonx << EOF
-import usd_path_finder
+from vim_usd_goto import usd_path_finder
 import vim
 
 path = usd_path_finder.resolve(vim.eval('a:path'))

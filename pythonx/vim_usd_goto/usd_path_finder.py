@@ -15,8 +15,7 @@ import subprocess
 import vim
 
 # IMPORT LOCAL LIBRARIES
-import shell_helper
-
+from . import shell_helper
 
 REGISTERED_RESOLVERS = []
 
@@ -56,7 +55,10 @@ def register_resolver(resolver):
 
 
 def resolve(path):
-    for resolver in itertools.chain([_resolve_using_usd _resolve_with_subprocess], REGISTERED_RESOLVERS):
+    for resolver in itertools.chain(
+        [_resolve_using_usd, _resolve_with_subprocess],
+        REGISTERED_RESOLVERS,
+    ):
         resolved_path = resolver(path)
         if resolved_path:
             return resolved_path
