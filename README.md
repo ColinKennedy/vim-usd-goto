@@ -12,9 +12,9 @@ Example:
 ```usda
 #usda 1.0
 (
-	subLayers = [
-		@foo:/Some[Tokened]/and/weird/path?extension=.usd,.usdc@
-	]
+    subLayers = [
+        @foo:/Some[Tokened]/and/weird/path?extension=.usd,.usdc@
+    ]
 )
 ```
 
@@ -46,10 +46,11 @@ filetype plugin on
 
 so that the ftplugin folder is sourced whenever you load usd/usda files.
 
-Reference:
-
-	`:help ftplugin`
-	https://www.gilesorr.com/blog/vim-ftplugin.html
+#### Reference
+```
+:help ftplugin
+https://www.gilesorr.com/blog/vim-ftplugin.html
+```
 
 
 ### 3. Define a filetype for USD files
@@ -57,6 +58,7 @@ If you haven't done this already, you need to `set filetype` for `*.usd` files
 so that the files in the ftplugin folder will be sourced.
 
 Add these lines in your `~/.vimrc`.
+
 ```vim
 autocmd! BufRead,BufNewFile *.usd set filetype=usd
 autocmd! BufRead,BufNewFile *.usda set filetype=usda
