@@ -26,15 +26,18 @@ exists.
 ## Installation
 Use your favorite plugin manager (examples below).
 
-### Vim-Plug
+### 1. Get the plugin
+#### Vim-Plug
 ```vim
 Plug 'ColinKennedy/vim-auto_docstring'
 ```
-### Vundle
+
+#### Vundle
 ```vim
 Plugin 'ColinKennedy/vim-auto_docstring'
 ```
 
+### 2. Enable ftplugin support
 Also make sure that your ~/.vimrc contains 
 
 ```vim
@@ -49,8 +52,19 @@ Reference:
 	https://www.gilesorr.com/blog/vim-ftplugin.html
 
 
+### 3. Define a filetype for USD files
+If you haven't done this already, you need to `set filetype` for `*.usd` files
+so that the files in the ftplugin folder will be sourced.
+
+Add these lines in your `~/.vimrc`.
+```vim
+autocmd! BufRead,BufNewFile *.usd set filetype=usd
+autocmd! BufRead,BufNewFile *.usda set filetype=usda
+```
+
+
 ## Requirements
-- Vim 8+
+- Vim 8+ with `+eval` support
 - [Pixar's USD](https://github.com/PixarAnimationStudios/USD) must be
 compiled and sourced
 
