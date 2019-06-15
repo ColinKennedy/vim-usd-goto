@@ -9,9 +9,10 @@ nnoremap <silent> <Plug>VimUsdGotoEditFile :call usd#run_command_on_usd_file('ed
 " This command forces the found path from ":norm gf" to be run through USD's ArResolver
 set includeexpr=usd#resolve(v:fname)
 
-" The default expression for finding paths in Vim is too restrictive. We need
-" We need to allow more characters or we won't be able to pick up the full path
-" e.g. we must add ":", "?", and "&" as valid characters
+" The default expression for finding paths in Vim is too strict. It only
+" searches for paths like "/foo.py". We need Vim to allow URI-friendly
+" characters like ":", "?", and "&". Otherwise, an incomplete path will
+" be passed to ArResolver and `usd#resolve` will fail.
 "
 " Reference: `:help isfname`
 "
