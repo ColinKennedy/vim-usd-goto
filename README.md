@@ -27,14 +27,14 @@ exists.
 Use your favorite plugin manager (examples below).
 
 ### 1. Get the plugin
-#### Vim-Plug
+#### vim-plug
 ```vim
-Plug 'ColinKennedy/vim-auto_docstring'
+Plug 'ColinKennedy/vim-usd-goto'
 ```
 
 #### Vundle
 ```vim
-Plugin 'ColinKennedy/vim-auto_docstring'
+Plugin 'ColinKennedy/vim-usd-goto'
 ```
 
 ### 2. Enable ftplugin support
