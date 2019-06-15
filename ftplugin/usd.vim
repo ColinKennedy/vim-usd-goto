@@ -3,9 +3,6 @@ if get(g:, 'vim_usd_goto_loaded', 0) == 1
     finish
 endif
 
-xnoremap <silent> <Plug>VimUsdGotoEditFileSelection :call usd#run_command_on_usd_file('edit', 'visual')<CR>
-nnoremap <silent> <Plug>VimUsdGotoEditFile :call usd#run_command_on_usd_file('edit', 'normal')<CR>
-
 " This command forces the found path from ":norm gf" to be run through USD's ArResolver
 set includeexpr=usd#resolve(v:fname)
 
