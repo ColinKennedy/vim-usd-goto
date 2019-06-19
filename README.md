@@ -91,6 +91,33 @@ where `path` is whatever is under your cursor when `gf` is pressed.
 executable is found, then it is run and its output will be used instead.
 
 
+## Help With Non-File-Paths
+By default, Vim's `gf` command assumes that the user is trying to select
+file paths. In USD, you might have some file resource that has a path
+like this:
+
+```usd
+@foo:/BAR(BAR)?version=3&something_else=this:.could:be:anything@
+```
+
+This plugin can't account for every possible syntax you might need. But
+if you wanted to support a path like the one above, you only need to add
+this to your `~/.vimrc`:
+
+```vim
+set isfname=@,48-57,/,.,-,_,+,,,#,$,%,~,=,:,?,&,(,)
+```
+(Hint: This is just Vim's default `isfname` + some extra allowed symbols)
+
+So if you're looking to use this plugin to resolve URIs, for example,
+your install process may look like this:
+
+```vim
+Plug 'ColinKennedy/vim-usd-goto'
+set isfname=@,48-57,/,.,-,_,+,,,#,$,%,~,=,:,?,&,(,)
+```
+
+
 ## Advanced Setup - Custom resolver function
 Most people will be able to resolve USD files using the above 2
 methods. But if you don't have Python sourced and you can't rely on the
