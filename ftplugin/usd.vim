@@ -1,4 +1,3 @@
-" TODO : Add finish guards
 if get(g:, 'vim_usd_goto_loaded', 0) == 1
     finish
 endif
